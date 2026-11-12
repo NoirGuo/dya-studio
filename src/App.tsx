@@ -15,6 +15,7 @@ import { SplashScreen } from "./components/SplashScreen";
 import { ReleaseNotesPage, RELEASE_NOTES_PATH } from "./pages/ReleaseNotesPage";
 import { ReconnectingOverlay } from "./components/ReconnectingOverlay";
 import { DeviceConnectionProvider } from "./components/DeviceConnection";
+import { DeviceAuthGate } from "./components/DeviceAuthGate";
 import { ConnectionContext } from "./contexts/DeviceConnectionContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -129,6 +130,7 @@ function AppRouter() {
     <KeyboardLayoutProvider>
       <DeviceConnectionProvider>
         <StudioUnlockProvider>
+          <DeviceAuthGate />
           <AppContent />
         </StudioUnlockProvider>
       </DeviceConnectionProvider>
